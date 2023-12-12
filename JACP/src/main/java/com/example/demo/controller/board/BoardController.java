@@ -4,25 +4,24 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.dto.board.BoardDAO;
 import com.example.demo.dto.board.BoardDto;
+import com.example.demo.service.board.BoardService;
 
 @RestController
+@RequestMapping("/api")
 public class BoardController {
 	
 	@Autowired
-    private BoardDAO boardDAO;
+    private BoardService boardService;
 	
 	@GetMapping("/board/boardList")
 	public List<BoardDto> getBoardList() {
-		System.out.println("111111 ");
 		try {
-			System.out.println("test?? " + boardDAO.selectBoardList());
-			return boardDAO.selectBoardList();
+			return boardService.selectBoardList();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
