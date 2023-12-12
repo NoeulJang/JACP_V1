@@ -4,7 +4,6 @@ public record BoardDto (
     Long idx,
     String boardTitle,
     String boardContent,
-    String boardKind,
     String regId,
     String regDt
 ) {

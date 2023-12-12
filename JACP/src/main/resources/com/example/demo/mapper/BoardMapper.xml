@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.board.BoardMapper">
+
+	<select id="selectBoardList" resultType="com.example.demo.dto.board.BoardDto">
+		select 
+			idx
+			,board_title
+			,board_contents
+			,reg_id
+			,reg_dt
+		from
+			board
+		where 
+			board_kind = 'BDK001'
+		order by reg_dt desc
+	</select>
+</mapper>
