@@ -24,7 +24,7 @@
     <div class="pagination w3-bar w3-padding-16 w3-small" v-if="paging.total_list_cnt > 0">
       <span class="pg">
       <a href="javascript:;" @click="fnPage(1)" class="first w3-button w3-bar-item w3-border">&lt;&lt;</a>
-      <a href="javascript:;" v-if="paging.start_page > 10" @click="fnPage(`${paging.start_page-1}`)"
+      <a href="javascript:;" v-if="paging.start_page > 3" @click="fnPage(`${paging.start_page-1}`)"
          class="prev w3-button w3-bar-item w3-border">&lt;</a>
       <template v-for=" (n,index) in paginavigation()">
           <template v-if="paging.page==n">
